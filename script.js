@@ -46,6 +46,15 @@ const ambienceData = [
 ];
 
 
+// MAIN ARTISTS SOURCES
+
+const shadowChevy = `<a href="https://twitter.com/Shadow_Chevy"
+target="_blank">Shadow Chevy</a>`;
+
+const scarristo = `<a href="https://twitter.com/Scarristo"
+target="_blank">Scarristo</a>`;
+
+
 // CHARACTERS PORTRAITS CODE
 
 const characters = [
@@ -387,16 +396,6 @@ const characters = [
 		]
 	},
 ];
-
-
-
-// MAIN ARTISTS SOURCES
-
-const shadowChevy = `<a href="https://twitter.com/Shadow_Chevy"
-target="_blank">Shadow Chevy</a>`;
-
-const scarristo = `<a href="https://twitter.com/Scarristo"
-target="_blank">Scarristo</a>`;
 
 
 // Main ambience image / currently shown
