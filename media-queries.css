@@ -1,0 +1,126 @@
+/* MEDIA QUERIES */
+
+/* BIG SCREENS */
+
+@media screen and (max-width: 1370px) {
+
+  /* CHARACTERS SECTION */
+
+  /* Choose Characters Styles */
+  .char-portraits-container {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  a {
+    font-size: var(--MAIN-FONT-SIZE);
+  }
+
+  .header-links-container {
+    margin: var(--HEADER-MOBILE-MARGIN)
+  }
+}
+
+/* MEDIUM SCREENS */
+
+@media (max-width: 1120px) {
+
+  h2, h3 {
+    margin: var(--HEADER-MOBILE-MARGIN)
+  }
+
+  /* WELCOME FORMER HELL SECTION */
+
+  .welcome-hell-container {
+    grid-template-columns: 1fr;
+  }
+
+  .ambience-container {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  /* CHARACTERS SECTION */
+  
+  .show-character-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "char-title"
+      "other-arts"
+      "selected-art"
+      "char-description"
+    ;
+    gap: var(--DOUBLE-GAP);
+    text-align: center;
+  }
+
+  /* CHARACTERS STYLES */
+  
+  .char-portraits-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  }
+
+  .selected-art {
+    min-width: 100px;
+  }
+
+  .other-arts-div {
+    margin: auto;
+  }
+
+  .thumbnail-art {
+    max-width: 100%;
+  }
+
+  /* Location styles */
+  .locations-div {
+    grid-template-columns: 1fr;
+  }
+
+  /* LOCATIONS HOVER STYLES */
+  .locations-div:hover {
+    grid-template-columns: 1fr;
+  }
+
+  .locations-div div {
+    margin: 1rem 0;
+  }
+}
+
+/* SMALL SCREENS */
+@media (max-width: 800px) {
+
+  body {
+    font-size: var(--MAIN-FONT-SIZE);
+  }
+
+  .header-container {
+    flex-direction: column;
+  }
+
+  .header-links-container {
+    gap: var(--MAIN-GAP);
+  }
+
+  h1 {
+    margin: 2rem 0;
+  }
+
+  .char-title h3 {
+    font-size: 2.5rem;
+  }
+
+
+  /* LOCATION STYLES */
+
+  .location-art {
+    min-width: 0;
+  }
+
+
+}

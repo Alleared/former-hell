@@ -1,0 +1,410 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------ VARIABLES -------------- */
+:root {
+  /* ----------- ( COLORS ) ------------- */
+  /* --BACKGROUND-1: #910000; */
+  --BACKGROUND-1: #571c1c;
+  --BACKGROUND-2: #000;
+  --WHITE: #fff;
+  --SELECTED-COLOR: whitesmoke;
+  --SECTION-BG-DIVISION: rgba(255, 255, 255, 0.1);
+  --FULL-SCREEN-BG: rgba(0, 0, 0, 0.5);
+
+  
+  
+  /* ----------- ( FONTS ) ------------- */
+  --MAIN-FONT-FAMILY: "Actor", sans-serif;
+  --TITLE-FONT-FAMILY: "Acme", sans-serif;
+  --MAIN-FONT-SIZE: clamp(1.8rem, 2.5vw, 2.2rem);
+  
+  
+  /* ------------ ( MARGIN / PADDING / GAP) ----------- */
+  /* MARGIN */
+  --MARGIN-BETWEEN-SECTION: 3rem 0;
+  --HEADER-MARGIN: 3rem 0;
+  --HEADER-MOBILE-MARGIN: 1.5rem 0;
+  --TITLE-HEADER-MARGIN: 0 0 1rem;
+  --PARAGRAPH-MARGIN: 0 0 2rem;
+  
+  /* PADDING */
+  --PAGE-PADDING: 2rem;
+  
+  /* GAP */
+  --MAIN-GAP: 1rem;
+  --DOUBLE-GAP: 2rem;
+  --QUAD-GAP: 4rem;
+  
+  
+  /* ------------- ( BORDER / BORDER RADIUS ) --------------- */
+  
+  --IMAGE-BORDER-RADIUS: 10px;
+  --PORTRAIT-BORDER-RADIUS: 50%;
+  --SELECTED-BORDER: 5px solid var(--SELECTED-COLOR);
+  --SELECTED-CHAR-BORDER: 10px double var(--SELECTED-COLOR);
+  --MAIN-IMAGE-BORDER: 10px inset black;
+}
+
+body {
+  background:#000 radial-gradient(var(--BACKGROUND-1), var(--BACKGROUND-2)) no-repeat;
+  color: var(--WHITE);
+  font-family: var(--MAIN-FONT-FAMILY);
+  font-size: var(--MAIN-FONT-SIZE);
+}
+
+header {
+  background: url(images/backgrounds/palace-of-earthy-spirits2.jpg) no-repeat fixed 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* LINKS STYLES */
+header a,
+header a:visited {
+  color: inherit;
+  font: var(--MAIN-FONT-SIZE) var(--MAIN-FONT-FAMILY);
+  text-decoration: none;
+  
+}
+a:visited {
+  color: var(--WHITE);
+}
+/* LINK HOVER STYLES */
+a:hover {
+  text-decoration: underline;
+}
+
+/* FIGCAPTION STYLES */
+figcaption, figcaption a {
+  font-size: var(--MAIN-FONT-SIZE);
+}
+
+h1, h2, h3 {
+  font-family: var(--TITLE-FONT-FAMILY);
+  margin: var(--TITLE-HEADER-MARGIN);
+}
+
+.header-container, .header-links-container {
+  display: flex; 
+  justify-content: space-between;
+  margin: var(--HEADER-MARGIN);
+}
+
+.header-container,
+.welcome-hell-container,
+.characters-container,
+.locations-container,
+.trivia-container,
+.footer-container {
+  align-items: center;
+  max-width: 1560px;
+  margin: auto;
+  padding: var(--PAGE-PADDING);
+}
+
+section:nth-child(odd) {
+  background-color: var(--SECTION-BG-DIVISION);
+}
+
+.header-links-container {
+  gap: var(--MAIN-GAP);
+}
+
+/* ------------ ( MAIN STYLES) ----------- */
+
+.bold-text {
+  font-weight: 900;
+}
+
+.title-div {
+  margin: var(--PARAGRAPH-MARGIN);
+}
+
+/* WELCOME TO FORMER HELL SECTION */
+
+.welcome-hell-container {
+  display: grid;
+  gap: var(--DOUBLE-GAP);
+  justify-content: space-between;
+}
+
+/* WELCOME HELL STYLES */
+.welcome-hell-container {
+  grid-template-columns: 3fr 1fr;
+}
+
+
+/* AMBIENCE STYLES */
+
+/* buttons styles */
+button {
+  border: none;
+  background-color: transparent;
+  border-radius: var(--IMAGE-BORDER-RADIUS);
+  cursor: pointer;
+  
+}
+
+.ambience-div {
+  max-width: 270px;
+  margin: 1rem 1rem 0 auto;
+}
+
+.selected-border {
+  border: var(--SELECTED-BORDER);
+  border-radius: var(--IMAGE-BORDER-RADIUS);
+  animation: shadowPulse .5s alternate infinite;
+}
+
+@keyframes shadowPulse {
+  from {
+    box-shadow: 0 0 0 var(--WHITE);
+  }
+
+  to {
+    box-shadow: 0 0 30px var(--WHITE);
+  }
+}
+
+.ambience-selected-div {
+  max-width: 800px;
+  cursor: pointer;
+}
+
+.selected-ambience-pic,
+.ambience-pic {
+  width: 100%;
+  height: auto;
+  min-width: 100px;
+  border-radius: var(--IMAGE-BORDER-RADIUS);
+  vertical-align: middle;
+  transition: opacity .3s;
+}
+
+/* IMAGES HOVER OPACITY STYLES */
+.selected-ambience-pic:hover,
+.ambience-pic:hover,
+.selected-art:hover,
+.thumbnail-art:hover {
+  opacity: .6;
+}
+
+/* CHARACTERS SECTION */
+
+/* Choose Characters Styles */
+.char-portraits-div, 
+.other-arts-container {
+  display: flex;
+}
+
+.char-portraits-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--DOUBLE-GAP);
+  margin: var(--MARGIN-BETWEEN-SECTION);
+}
+
+.char-portraits-div {
+  justify-content: center;
+}
+
+.char-portrait-button {
+  border: var(--SELECTED-CHAR-BORDER);
+  transition: box-shadow .3s;
+  /* border-radius: var(--PORTRAIT-BORDER-RADIUS); */
+}
+
+/* Char portrait button hover styles */
+.char-portrait-button:hover {
+  box-shadow: 0 0 30px var(--WHITE);
+  /* animation: stretchButton .5s forwards */
+}
+
+.selected-char {
+  border-radius: var(--PORTRAIT-BORDER-RADIUS);
+  /* transform: scale(1.1); */
+  animation: pulse .6s infinite alternate, shadowPulse .6s alternate infinite;
+
+  /* animation: stretchButton .6s forwards; */
+  /* transform: scaleX(1.2) skewX(-10deg); */
+  box-shadow: 0 0 60px var(--WHITE);
+}
+
+/* Char Portrait Button animation styles */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes stretchButton {
+  from {
+    transform: scale(1) skew(0)
+  }
+  to {
+    transform: scale(1.1) skew(-10deg, 5deg)
+  }
+}
+
+.portrait-pic {
+  max-width: 130px;
+}
+
+
+/* Show Selected Character styles */
+
+.show-character-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--QUAD-GAP);
+  justify-content: center;
+  margin: var(--MARGIN-BETWEEN-SECTION);
+  grid-template-areas: 
+  "selected-art char-title"
+  "selected-art char-description"
+  "selected-art other-arts"
+  ;
+}
+
+.selected-art-div {
+  grid-area: selected-art;
+  max-width: 550px;
+  margin: auto;
+}
+
+.char-title {
+  grid-area: char-title;
+}
+
+.char-title h3 {
+  font-size: 3.5rem;
+}
+
+.char-description {
+  grid-area: char-description;
+}
+
+.other-arts-container {
+  grid-area: other-arts;
+  gap: var(--MAIN-GAP);
+  justify-content: space-between;
+}
+
+.other-arts-div {
+  max-width: 150px;
+}
+
+.thumbnail-button {
+  border-radius: var(--IMAGE-BORDER-RADIUS);
+  vertical-align: middle;
+}
+
+/* The main art showing side by side with the character stats */
+.selected-art,
+.thumbnail-art {
+  width: 100%;
+  border-radius: var(--IMAGE-BORDER-RADIUS);
+  cursor: pointer;
+  transition: opacity .3s;
+}
+
+.selected-art {
+  border: var(--MAIN-IMAGE-BORDER);
+}
+
+
+/* Open main art on full screen Styles */
+
+.full-screen-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--FULL-SCREEN-BG);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.full-screen-image {
+  max-width: 90%; 
+  max-height: 90%; 
+  object-fit: contain; 
+  border-radius: var(--IMAGE-BORDER-RADIUS);
+}
+
+.close-full-screen {
+  position: absolute; 
+  top: 20px; 
+  right: 50px; 
+  background-color: transparent; 
+  border: none; 
+  color: white; 
+  font-size: 60px; 
+  cursor: pointer; 
+}
+
+.hidden {
+  display: none;
+}
+/* End of the full screen styles */
+
+
+/* LOCATIONS STYLES */
+
+.locations-div {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-bottom: 3px dashed var(--WHITE);
+  justify-content: space-between;
+  gap: var(--DOUBLE-GAP);
+  transition: grid-template-columns .3s;
+}
+
+.locations-div div {
+  margin: var(--MARGIN-BETWEEN-SECTION);
+}
+
+.locations-div:last-child {
+  border-bottom: none;
+}
+
+.location-art {
+  width: 100%;
+  min-width: 400px;
+  border-radius: var(--IMAGE-BORDER-RADIUS);
+}
+
+/* LOCATIONS HOVER STYLES */
+.locations-div:hover {
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* FUN FACTS STYLES */
+.trivia-container li {
+  margin: 2rem;
+}
+
+/* FOOTER STYLES */
+
+footer {
+  background-color: black;
+  text-align: center;
+}
+
+.footer-container p {
+  margin: var(--MARGIN-BETWEEN-SECTION);
+}
+
